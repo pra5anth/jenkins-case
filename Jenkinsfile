@@ -14,7 +14,7 @@ pipeline {
         }
         stage('docker') {
             steps {
-                sh 'sudo docker login -u pra5anth -password-stdin'
+                sh 'sudo docker login -u pra5anth --password-stdin'
                 sh 'sudo docker build /home/ubuntu/jenkins/workspace/doc-t/ -t pra5anth/test'
                 sh 'sudo docker push pra5anth/test'
             }
