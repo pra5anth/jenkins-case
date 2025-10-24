@@ -17,6 +17,8 @@ pipeline {
                 sh 'sudo docker login -u ${DOCKERHUB_CREDENTIALS_USR} -p ${DOCKERHUB_CREDENTIALS_PSW}'
                 sh 'sudo docker build /home/ubuntu/jenkins/workspace/doc-t/ -t pra5anth/test'
                 sh 'sudo docker push pra5anth/test'
+                sh 'sudo docker pull pra5anth/test'
+                sh 'sudo docker run -it pra5anth/test -p 8180:80
             }
         }
     }
