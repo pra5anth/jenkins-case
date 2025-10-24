@@ -17,7 +17,6 @@ pipeline {
                 sh 'sudo docker login -u ${DOCKERHUB_CREDENTIALS_USR} -p ${DOCKERHUB_CREDENTIALS_PSW}'
                 sh 'sudo docker build /home/ubuntu/jenkins/workspace/doc-t/ -t pra5anth/test'
                 sh 'sudo docker push pra5anth/test'
-                sh 'sudo docker run -itd pra5anth/test --port 89:80
             }
         }
     }
